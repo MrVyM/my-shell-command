@@ -1,7 +1,6 @@
 #!/bin/bash
 
-SOURCE=$1
-DESTINATION=$2
+SOURCE=$@
 
 function mycat()
 {
@@ -19,4 +18,7 @@ function mycat()
     done < "$SOURCE"
 }
 
-mycat $SOURCE
+for file in $SOURCE
+do 
+    mycat $file
+done
